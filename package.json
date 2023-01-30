@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
+  "repository": {
+    "url": "git+https://github.com/simi-moni/gomoku-university.git"
+  },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=development",
     "start": "webpack-dev-server --open --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --max-warnings 0",
     "lintfix": "npm run lint -- --fix",
-    "release": "standard-version"
+    "release": "standard-version",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
@@ -17,6 +22,7 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "file-loader": "^4.2.0",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
     "raw-loader": "^3.1.0",
     "standard-version": "^9.1.0",
